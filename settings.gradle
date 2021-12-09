@@ -1,0 +1,5 @@
+rootProject.name = 'Microservices'
+
+include 'BlogService'
+include 'ConfigService'
+include 'EurekaService'

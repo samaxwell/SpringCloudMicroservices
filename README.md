@@ -46,17 +46,20 @@ docker-compose down
 ```
 
 
-# to view container status
-docker-compose ps
-# or
-docker ps
+To view container status
+` docker-compose ps `
+or
+`docker ps`
 
-# to stop
-docker-compose down
+To stop containers:
+`docker-compose down`
 
 
+### Testing
+Applications which connect to eureka run with a special `test` profile which disables the eureka client. 
 
-### TODO 
+
+## TODO 
 - add trace IDs (sleuth)
 - setup E.S. and send logs
 - visualize traces in E.S.

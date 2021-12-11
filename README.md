@@ -16,6 +16,16 @@ Blog Service: localhost:9090 <br>
 API Gateway: localhost:8080 <br>
 
 
+### Service Discovery
+
+#### API endpoints: <br>
+
+| Description | Command                                                         |
+| ----------- |-----------------------------------------------------------------|
+| Discover registered apps | `curl -H 'Accept: application/json' localhost:8761/eureka/apps \| jq` |
+
+
+
 ### TODO 
 - add trace IDs (sleuth)
 - setup E.S. and send logs

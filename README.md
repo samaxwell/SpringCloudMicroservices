@@ -55,6 +55,14 @@ To stop containers:
 `docker-compose down`
 
 
+### Setup Zipkin
+Run the following: <br>
+
+`docker run -d -p 9411:9411 openzipkin/zipkin`
+
+Browse to http://localhost:9411 to find traces!
+
+
 ### Testing
 Applications which connect to eureka run with a special `test` profile which disables the eureka client. 
 

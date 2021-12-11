@@ -2,6 +2,11 @@ spring:
   application:
     name: api-gateway
 
+  sleuth:
+    enabled: true
+  zipkin:
+    enabled: false
+
 server:
   port: 8080
 

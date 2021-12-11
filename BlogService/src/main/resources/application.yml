@@ -2,6 +2,11 @@ spring:
   application:
     name: blog-service
 
+  sleuth:
+    enabled: true
+  zipkin:
+    enabled: false
+
   cloud:
     config:
       uri: http://localhost:8888

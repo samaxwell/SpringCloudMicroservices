@@ -2,22 +2,22 @@
 server:
   port: 8080
 
-spring:
-  application:
-    name: api-gateway-service
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-      routes:
-        - id: blog-service
-          predicates:
-            - Path=blogs/**
-            - Method=GET
-          uri: http://localhost:9090
-          filters:
-            - PrefixPath=/mypath
+#spring:
+#  application:
+#    name: api-gateway-service
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: blog-service
+#          predicates:
+#            - Path=blogs/**
+#            - Method=GET
+#          uri: http://localhost:9090
+#          filters:
+#            - PrefixPath=/mypath
 
 eureka:
   client:

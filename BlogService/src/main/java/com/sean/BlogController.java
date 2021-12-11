@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/blogs/api/v1/blogs")
+@RequestMapping("/api/v1/blogs")
 public class BlogController {
 
     @GetMapping
     public ResponseEntity<String> getBlog() {
-       return ResponseEntity.ok("Hello blogger");
+       return ResponseEntity.ok("{ \"message\": \"Hello blogger\" }");
     }
 }

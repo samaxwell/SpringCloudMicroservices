@@ -75,5 +75,6 @@ Applications which connect to eureka run with a special `test` profile which dis
 - add security
 - dockerize
 - hystrix
+- add shared H2
 
 

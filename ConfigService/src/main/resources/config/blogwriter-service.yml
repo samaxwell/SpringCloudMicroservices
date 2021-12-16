@@ -9,6 +9,14 @@ spring:
   h2:
     console:
       enabled: true
+  cloud:
+    stream:
+      function:
+        definition: saveNewBlog
+      bindings:
+        saveNewBlog-in-0:
+          destination: new-blogs
+          group: blog-writer
 
 server:
   port: 9091

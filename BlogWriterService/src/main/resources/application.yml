@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: blogwriter-service
+
+  sleuth:
+    enabled: true
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+server:
+  port: 9091

@@ -28,3 +28,4 @@ public class Blog {
         this.content = content;
     }
 }
+

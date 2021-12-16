@@ -1,6 +1,7 @@
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:tcp://localhost:9092/mem:testdb
+#    url: jdbc:h2:tcp://localhost/mem:testdb
     driverClassName: org.h2.Driver
     username: sa
     password:
@@ -8,10 +9,10 @@ spring:
     database-platform: org.hibernate.dialect.H2Dialect
   h2:
     console:
-      enabled: true
+      enabled: false
 
 server:
-  port: 9090
+  port: 9091
 
 eureka:
   client:

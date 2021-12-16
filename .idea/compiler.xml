@@ -9,6 +9,7 @@
         </processorPath>
         <module name="Microservices.BlogService.main" />
         <module name="Microservices.ApiGatewayService.main" />
+        <module name="Microservices.BlogWriterService.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11" />

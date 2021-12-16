@@ -20,8 +20,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-	implementation "org.springframework.cloud:spring-cloud-starter-sleuth"
-	implementation "org.springframework.cloud:spring-cloud-sleuth-zipkin"
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'pl.project13.maven:git-commit-id-plugin:4.9.10'
 }

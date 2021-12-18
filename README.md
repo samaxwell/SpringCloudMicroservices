@@ -13,15 +13,18 @@ A basic microservice setup to practice the following:
 ![App architecture](images/Screen%20Shot%202021-12-17%20at%2011.26.30%20PM.png)
 
 ### URLs
-Config Server: localhost:8888 <br>
-Eureka: localhost:8761 <br>
-Blog Service: localhost:9090 <br>
-API Gateway: localhost:8080 <br>
+
+| Service Name        | Url            |
+|---------------------|----------------|
+| Config Server       | localhost:8888 |
+| Eureka              | localhost:8761 |
+| Blog Service        | localhost:9090 |
+| Blog Writer Service | localhost:9091 |
+| API Gateway         | localhost:8080 |
+| Zipkin              | localhost:9411 |
 
 
 ### Service Discovery
-
-#### API endpoints: <br>
 
 | Description | Command                                                         |
 | ----------- |-----------------------------------------------------------------|

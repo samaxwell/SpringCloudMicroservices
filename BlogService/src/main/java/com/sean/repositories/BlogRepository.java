@@ -1,6 +1,7 @@
 package com.sean.repositories;
 
 import com.sean.models.Blog;
+import org.springframework.cloud.sleuth.annotation.ContinueSpan;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

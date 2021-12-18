@@ -9,6 +9,9 @@ A basic microservice setup to practice the following:
 - Resiliency w/ Hystrix
 
 
+### Architecture
+![App architecture](images/Screen%20Shot%202021-12-17%20at%2011.26.30%20PM.png)
+
 ### URLs
 Config Server: localhost:8888 <br>
 Eureka: localhost:8761 <br>

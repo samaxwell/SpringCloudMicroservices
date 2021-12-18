@@ -23,6 +23,16 @@ A basic microservice setup to practice the following:
 | API Gateway         | localhost:8080 |
 | Zipkin              | localhost:9411 |
 
+<br>
+
+### Kafka Topics
+
+| Service Name        | Topic     | Role     |
+|---------------------|-----------|----------|
+| Blog Writer Service | new-blogs | Consumer |
+
+
+<br>
 
 ### Service Discovery
 

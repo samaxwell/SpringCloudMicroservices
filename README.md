@@ -40,6 +40,11 @@ A basic microservice setup to practice the following:
 | ----------- |-----------------------------------------------------------------|
 | Discover registered apps | `curl -H 'Accept: application/json' localhost:8761/eureka/apps \| jq` |
 
+#### Endpoints:
+
+- `/refresh?serviceName=<serviceName>`
+
+
 
 ### Elastic Search
 Download and run Confluent service (includes kafka, zookeeper, schema registry, etc.)

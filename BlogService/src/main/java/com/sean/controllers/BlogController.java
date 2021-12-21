@@ -1,7 +1,6 @@
 package com.sean.controllers;
 
 import com.sean.models.Blog;
-import com.sean.repositories.BlogRepository;
 import com.sean.services.BlogService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

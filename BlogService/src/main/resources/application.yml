@@ -2,20 +2,41 @@ spring:
   application:
     name: blog-service
 
-  sleuth:
-    enabled: true
-    sampler:
-      probability: 1.0
-  zipkin:
-    enabled: true
-    base-url: http://localhost:9411
-
   cloud:
     config:
       uri: http://localhost:8888
 
   config:
     import: optional:configserver:http://localhost:8888
+
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9411
+  sleuth:
+    enabled: true
+    sampler:
+      probability: 1.0
+    baggage:
+      remote-fields:             # List of fields that are referenced the same in-process as it is on the wire
+        - app-session-id
+      local-fields:              # List of fields that should be accessible within the JVM process but not propagated over the wire
+        - app-session-id
+      correlation-fields:        # List of fields that should be propagated over the wire
+        - app-session-id
+      correlation-enabled: true  # Enables correlating the baggage context with logging contexts.
+      tag-fields:                # List of fields that should automatically become tags.
+        - app-session-id
+
+# Add a custom logging pattern to include the session ID. Unfortunately we'll need to do everything.
+# We can copy Spring Boot's default pattern from:
+#   - org/springframework/boot/logging/logback/defaults.xml
+# Docs here: https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.logging.custom-log-configuration
+# In particular, search for 'you should use Spring Boot’s syntax'
+# Color coding:
+#   - https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#features.logging.console-output.color-coded
+logging:
+  pattern:
+    console: "${CONSOLE_LOG_PATTERN:%clr(%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr([%X{app-session-id},%X{traceId},%X{spanId}]){green} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}}"
 
 server:
   port: 9090

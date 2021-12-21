@@ -39,10 +39,7 @@ A basic microservice setup to practice the following:
 | Description | Command                                                         |
 | ----------- |-----------------------------------------------------------------|
 | Discover registered apps | `curl -H 'Accept: application/json' localhost:8761/eureka/apps \| jq` |
-
-#### Endpoints:
-
-- `/refresh?serviceName=<serviceName>`
+| Refresh all instances of a service | `curl localhost:8761/refresh?serviceName=<serviceName` | 
 
 
 

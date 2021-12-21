@@ -101,11 +101,11 @@ Applications which connect to eureka run with a special `test` profile which dis
 ## TODO 
 - DONE - add trace IDs (sleuth)
 - setup E.S. and send logs
-- visualize traces in Zipkin
+- DONE - visualize traces in Zipkin
 - visualize traces in E.S.
 - add security
 - dockerize
 - hystrix
-- add shared H2
+- DONE - add shared H2
 
 

@@ -80,6 +80,19 @@ Run the following: <br>
 
 Browse to http://localhost:9411 to find traces!
 
+### Observability
+
+The application uses Spring Sleuth to add Trace and Span Ids to all backend requests. Additionally, a baggage field called `app-session-id` (TODO: rename this) will be propegated from an (optional) inbound http request header of the same name. To log this baggage field with the other trace information, we need to override the log pattern and add it. The appropriate `logging.pattern.console' value is as follows:
+
+```yaml
+
+logging:
+  pattern:
+    console: "${CONSOLE_LOG_PATTERN:%clr(%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr([%X{app-session-id},%X{traceId},%X{spanId}]){green} %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}}"
+
+```
+
+The intent for this baggage field is that a session ID may be passed from all front-end requests associated with a user's session. Perhaps at signon this session ID can be generated and recorded for easy tracking and subsequent access. 
 
 ### Testing
 Applications which connect to eureka run with a special `test` profile which disables the eureka client. 

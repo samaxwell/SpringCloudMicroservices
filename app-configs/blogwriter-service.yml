@@ -1,0 +1,39 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+  cloud:
+    stream:
+      function:
+        definition: saveNewBlog
+      bindings:
+        saveNewBlog-in-0:
+          destination: new-blogs
+          group: blog-writer
+          consumer:
+            batch-mode: true
+            concurrency: 3
+
+server:
+  port: 9091
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

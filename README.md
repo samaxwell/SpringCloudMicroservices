@@ -44,6 +44,30 @@ A basic microservice setup to practice the following:
 
 
 ### Elastic Search
+#### Setup:
+```shell
+docker network create elastic
+docker run -d --name es01-test --net elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.12.1
+docker run -d --name kib01-test --net elastic -p 5601:5601 -e "ELASTICSEARCH_HOSTS=http://es01-test:9200" docker.elastic.co/kibana/kibana:7.12.1
+```
+    
+#### To Stop the containers:
+```shell
+docker stop es01-test
+docker stop kib01-test
+```
+    
+#### To remove the containers and network:
+```shell
+docker network rm elastic
+docker rm es01-test
+docker rm kib01-test
+```
+
+You should now be able to access Kibana at localhost:5601
+
+
+### Install Kafka
 Download and run Confluent service (includes kafka, zookeeper, schema registry, etc.)
 
 ```console
@@ -100,12 +124,14 @@ Applications which connect to eureka run with a special `test` profile which dis
 
 ## TODO 
 - DONE - add trace IDs (sleuth)
-- setup E.S. and send logs
 - DONE - visualize traces in Zipkin
+- DONE - add shared H2
+- move configs to github
+- change configs server to register w/ eureka
+- update apps to pull configs via eureka
+- dockerize
+- write docker-compose.yml
+- setup E.S. and send logs
 - visualize traces in E.S.
 - add security
-- dockerize
 - hystrix
-- DONE - add shared H2
-
-

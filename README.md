@@ -127,8 +127,8 @@ Applications which connect to eureka run with a special `test` profile which dis
 - DONE - visualize traces in Zipkin
 - DONE - add shared H2
 - DONE - move configs to github
-- change configs server to register w/ eureka
-- update apps to pull configs via eureka
+- DONE - change configs server to register w/ eureka
+- DONE - update apps to pull configs via eureka
 - dockerize
 - write docker-compose.yml
 - setup E.S. and send logs

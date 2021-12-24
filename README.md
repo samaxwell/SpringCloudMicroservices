@@ -126,7 +126,7 @@ Applications which connect to eureka run with a special `test` profile which dis
 - DONE - add trace IDs (sleuth)
 - DONE - visualize traces in Zipkin
 - DONE - add shared H2
-- move configs to github
+- DONE - move configs to github
 - change configs server to register w/ eureka
 - update apps to pull configs via eureka
 - dockerize

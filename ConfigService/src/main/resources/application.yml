@@ -1,6 +1,14 @@
 spring:
   zipkin:
     enabled: false
+  cloud:
+    config:
+      server:
+        git:
+          uri: 'https://github.com/samaxwell/SpringCloudMicroservices.git'
+          search-paths:
+            - app-configs*
+          default-label: master
 
 server:
   port: 8888

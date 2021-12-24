@@ -17,6 +17,9 @@ spring:
         saveNewBlog-in-0:
           destination: new-blogs
           group: blog-writer
+          consumer:
+            batch-mode: true
+            concurrency: 3
 
 server:
   port: 9091

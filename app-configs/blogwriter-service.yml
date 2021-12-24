@@ -21,14 +21,6 @@ spring:
             batch-mode: true
             concurrency: 3
 
-server:
-  port: 9091
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
 management:
   endpoints:
     web:

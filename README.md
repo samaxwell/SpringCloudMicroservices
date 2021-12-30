@@ -36,10 +36,11 @@ A basic microservice setup to practice the following:
 
 ### Service Discovery
 
-| Description | Command                                                         |
-| ----------- |-----------------------------------------------------------------|
-| Discover registered apps | `curl -H 'Accept: application/json' localhost:8761/eureka/apps \| jq` |
-| Refresh all instances of a service | `curl localhost:8761/refresh?serviceName=<serviceName` | 
+| Description                                | Command                                                                       |
+|--------------------------------------------|-------------------------------------------------------------------------------|
+| Discover registered apps                   | `curl -H 'Accept: application/json' localhost:8761/eureka/apps \              | jq` |
+| Discover registered instances of a service | `curl -H 'Accept: application/json' localhost:8761/eureka/apps/SERVICE-NAME \ | jq` |
+| Refresh all instances of a service         | `curl localhost:8761/refresh?serviceName=<serviceName`                        | 
 
 
 

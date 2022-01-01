@@ -1,0 +1,21 @@
+version: '2'
+services:
+  eurekaserver:
+    image: 'sean/eureka:latest'
+    ports:
+      - '8761:8761'
+    networks:
+      - 'microservices'
+  configserver:
+    image: 'sean/configs:latest'
+    ports:
+      - '8888:8888'
+    networks:
+      - 'microservices'
+    environment:
+      EUREKASERVER_URI: 'http://eurekaserver:8761/eureka/'
+      EUREKASERVER_PORT: '8761'
+
+networks:
+  microservices:
+    driver: 'bridge'

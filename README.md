@@ -107,7 +107,7 @@ Browse to http://localhost:9411 to find traces!
 
 ### Observability
 
-The application uses Spring Sleuth to add Trace and Span Ids to all backend requests. Additionally, a baggage field called `app-session-id` (TODO: rename this) will be propegated from an (optional) inbound http request header of the same name. To log this baggage field with the other trace information, we need to override the log pattern and add it. The appropriate `logging.pattern.console' value is as follows:
+The application uses Spring Sleuth to add Trace and Span Ids to all backend requests. Additionally, a baggage field called `app-session-id` (TODO: rename this to `session-id`) will be propagated from an (optional) inbound http request header of the same name. To log this baggage field with the other trace information, we need to override the default logback log pattern and add the new field. The appropriate `logging.pattern.console` value is as follows:
 
 ```yaml
 
